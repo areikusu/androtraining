@@ -1,7 +1,6 @@
 package dam.pmdm.rotacio0;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,18 +8,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.NumberPicker;
-import android.os.Build;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Switch;
 
-public class MainActivity extends Activity {
-
+public class MainActivity extends Activity implements OnCheckedChangeListener {
+	Switch s =(Switch)findViewById(R.id.switch1);
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void onCreate(Bundle b) {
+		super.onCreate(b);
 		setContentView(R.layout.activity_main);
-
-		if (savedInstanceState == null) {
+		s.setOnCheckedChangeListener(this);
+		if (b == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
@@ -63,6 +62,12 @@ public class MainActivity extends Activity {
 					false);
 			return rootView;
 		}
+	}
+
+	@Override
+	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
