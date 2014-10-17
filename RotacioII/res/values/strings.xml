@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RotacioII</string>
+    <string name="action_settings">Configuració</string>
+    <string name="title">Exemple Gestió Rotació!</string>
+    <string name="contentDescription_TG">Targeta Groga</string>
+    <string name="contentDescription_TR">Targeta Roja</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Rotacio0</string>
+    <string name="titol">Comportament d\'un Activity quan rotem la pantalla!</string>
+    <string name="action_settings">Configuració</string>
+
+</resources>
