@@ -91,14 +91,7 @@
     
     </LinearLayout>
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="15"
-        android:text="Carnet de conduir?" />
-
+    
     <RatingBar
         android:id="@+id/ratingBar1"
         android:layout_width="wrap_content"
@@ -116,5 +109,17 @@
         android:layout_gravity="center|bottom"
         android:layout_weight="20"
         android:text="Button" />
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:rating="3" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Enviar Dades" />
 
 </LinearLayout>
