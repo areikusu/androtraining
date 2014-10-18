@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class Start extends Activity implements OnClickListener , OnLongClickListener   {
+public class MainActivity extends Activity implements OnClickListener , OnLongClickListener   {
 	Button b1;
 	TextView t;
 	int counter=0;
