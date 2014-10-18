@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 public class MainActivity extends Activity implements OnClickListener , OnLongClickListener   {
 	Button b1;
 	TextView t;
+	ImageView img;
 	int counter=0;
     @Override
     protected void onCreate(Bundle b) {
@@ -23,6 +25,8 @@ public class MainActivity extends Activity implements OnClickListener , OnLongCl
         b1.setOnClickListener(this);
         b1.setOnLongClickListener(this);
         t=(TextView)findViewById(R.id.textView1);
+        img=(ImageView)findViewById(R.id.imageView1);
+        img.setOnClickListener(this);
     }
     public void onSaveInstanceState(Bundle b) {
 		super.onSaveInstanceState(b);
@@ -56,7 +60,7 @@ public class MainActivity extends Activity implements OnClickListener , OnLongCl
     }
  	@Override
 	public void onClick(View v) {
- 		if(v.getId()==R.id.button1){
+ 		if(v.getId()==R.id.button1 || v.getId()== R.id.imageView1){
  			counter++;
  			t.setText(counter+"");
  		}	
