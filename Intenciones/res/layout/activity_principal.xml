@@ -16,7 +16,8 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="15"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="20"
         android:gravity="center_horizontal"
         android:text="@string/titol" />
 
@@ -44,7 +45,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textAllCaps="false"
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/TextView01"
@@ -57,11 +60,13 @@
             android:id="@+id/editText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/linearLayout1"
-            android:layout_below="@+id/linearLayout1"
             android:layout_margin="20dp"
+            android:clickable="false"
             android:ems="10"
-            android:inputType="phone" >
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="phone"
+            android:longClickable="false" >
 
             <requestFocus />
         </EditText>
@@ -72,6 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="20dp"
+            android:clickable="true"
+            android:focusable="false"
             android:orientation="horizontal" >
 
             <RadioButton
@@ -88,20 +95,29 @@
                 android:text="Femella" />
 
         </RadioGroup>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Carnet de conducir?" />
     
     </LinearLayout>
 
-    
     <RatingBar
         android:id="@+id/ratingBar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="20"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:duplicateParentState="false"
+        android:indeterminate="false"
+        android:longClickable="false"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="1"
         android:visibility="visible" />
-
 
     <Button
         android:id="@+id/button1"
@@ -109,7 +125,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ratingBar1"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="14dp"
+        android:clickable="false"
+        android:duplicateParentState="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:longClickable="false"
         android:text="Enviar Dades" />
 
 </LinearLayout>
