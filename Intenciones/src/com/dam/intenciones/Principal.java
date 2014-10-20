@@ -21,6 +21,7 @@ import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 public class Principal extends Activity implements OnClickListener, OnCheckedChangeListener, android.widget.CompoundButton.OnCheckedChangeListener, OnEditorActionListener{
+	private static final int REQUEST_TEXT = 0;
 	EditText e1, e2;
 	RadioGroup rG;
 	RadioButton rM, rF;
@@ -109,7 +110,8 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 				i.putExtra("sexo", rG.getCheckedRadioButtonId());
 				i.putExtra("carnet", sW1.isChecked());
 				i.putExtra("punts", rB.getProgress());
-				Principal.this.startActivity(i);
+				Principal.this.startActivityForResult(i,REQUEST_TEXT);
+				
 			}
 			break;
 		
@@ -144,5 +146,14 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 		e2.setFocusableInTouchMode(true);
 		return true;
 	}
+	@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+         if ( requestCode == REQUEST_TEXT ){
+              if ( resultCode == Activity.RESULT_OK ){
+                   Principal.this.finish();
+              }
+         }
+
 
 }
+	}

@@ -1,6 +1,7 @@
 package com.dam.intenciones;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -67,7 +68,9 @@ public class Resultados extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(v.getId()==R.id.button1){
-			Resultados.this.finish();
+			Intent i = new Intent( Resultados.this, Principal.class );
+		     setResult(Activity.RESULT_OK, i);
+		     Resultados.this.finish();
 		}
 		
 	}
