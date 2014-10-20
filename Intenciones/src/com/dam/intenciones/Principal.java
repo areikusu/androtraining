@@ -115,7 +115,7 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 				i.putExtra("telefono", e2.getText().toString());
 				i.putExtra("sexo", rG.getCheckedRadioButtonId());
 				i.putExtra("carnet", sW1.isChecked());
-				i.putExtra("punts", rB.getProgress());
+				i.putExtra("punts", rB.getRating());
 				Principal.this.startActivity(i);
 				//Codigo utilizado en la version que cierra todo al finalizar en la segunda activity
 				//Principal.this.startActivityForResult(i,REQUEST_TEXT);
