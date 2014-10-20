@@ -12,37 +12,36 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Resultados extends Activity implements OnClickListener {
-	TextView t1,t2,t3,t4;
+	TextView t1, t2, t3, t4;
 	Button b1;
 	ImageView img;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_resultados);
-		b1=(Button)findViewById(R.id.button1);
+		b1 = (Button) findViewById(R.id.button1);
 		b1.setOnClickListener(this);
-		t1=(TextView)findViewById(R.id.textView2);
-		t2=(TextView)findViewById(R.id.textView4);
-		t3=(TextView)findViewById(R.id.textView6);
-		t4=(TextView)findViewById(R.id.textView8);
-		img=(ImageView)findViewById(R.id.imageView1);
+		t1 = (TextView) findViewById(R.id.textView2);
+		t2 = (TextView) findViewById(R.id.textView4);
+		t3 = (TextView) findViewById(R.id.textView6);
+		t4 = (TextView) findViewById(R.id.textView8);
+		img = (ImageView) findViewById(R.id.imageView1);
 		t1.setText(getIntent().getExtras().getString("nombre").toString());
 		t2.setText(getIntent().getExtras().getString("telefono").toString());
-		t4.setText(getIntent().getExtras().getInt("punts")+"");
-		if(getIntent().getExtras().getInt("sexo") == R.id.radio0 ){
-			img.setImageResource(R.drawable.mascle);	
-		}else{
+		t4.setText(getIntent().getExtras().getFloat("punts") + "");
+		if (getIntent().getExtras().getInt("sexo") == R.id.radio0) {
+			img.setImageResource(R.drawable.mascle);
+		} else {
 			img.setImageResource(R.drawable.femella);
 		}
-			
-		if(getIntent().getBooleanExtra("carnet", true)){
+
+		if (getIntent().getBooleanExtra("carnet", true)) {
 			t3.setText("SI");
-		}else{
+		} else {
 			t3.setText("NO");
 		}
-		
-		
-		
+
 	}
 
 	@Override
@@ -63,15 +62,23 @@ public class Resultados extends Activity implements OnClickListener {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		if(v.getId()==R.id.button1){
-			Intent i = new Intent( Resultados.this, Principal.class );
-		     setResult(Activity.RESULT_OK, i);
-		     Resultados.this.finish();
+		if (v.getId() == R.id.button1) {
+			Resultados.this.finish();
 		}
-		
+
 	}
+	//Codigo utilizado en la version que cierra todo al finalizar en la segunda activity
+	/*@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if (v.getId() == R.id.button1) {
+			Intent i = new Intent(Resultados.this, Principal.class);
+			setResult(Activity.RESULT_OK, i);
+			Resultados.this.finish();
+		}
+
+	}*/
 }

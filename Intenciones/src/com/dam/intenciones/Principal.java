@@ -32,6 +32,7 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//Elementos del Layout que hay que obtener info o añadir listener
 		setContentView(R.layout.activity_principal);
 		e1=(EditText)findViewById(R.id.editText1);
 		e2=(EditText)findViewById(R.id.editText2);
@@ -63,7 +64,7 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 		return true;
 	}
 
-	@Override
+	/*@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
@@ -73,12 +74,13 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
+	}*/
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
+		//codigo usado en la version que comprueba al hacer clich sobre editext 2 comprobando la longitud del texto de editext 1 para recibir foco en caso de ser mayor que 0
 	/*	case R.id.editText2 :
 			if(e1.getText().length()<=0){
 				Toast.makeText(getApplicationContext(),"introduce primero el nombre", Toast.LENGTH_SHORT).show();
@@ -89,6 +91,7 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 			break;*/
 		case R.id.radioGroup1 :
 			if(e1.getText().length()<=0||e2.getText().length()<=0){
+				//en caso de no estar rellenos los editext no deja continuar
 				Toast.makeText(getApplicationContext(),"Completa los campos anteriores", Toast.LENGTH_SHORT).show();
 			}
 			
@@ -96,21 +99,26 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 			break;
 		case R.id.switch1 :
 			if(e1.getText().length()<=0||e2.getText().length()<=0){
+				//en caso de no estar rellenos los editext no deja continuar
 				Toast.makeText(getApplicationContext(),"Completa los campos anteriores", Toast.LENGTH_SHORT).show();
 			}	
 			break;
 		case R.id.button1 :
 			if(e1.getText().length()<=0||e2.getText().length()<=0){
+				//en caso de no estar rellenos los editext no deja continuar
 				Toast.makeText(getApplicationContext(),"Completa los campos anteriores", Toast.LENGTH_SHORT).show();
 			}
 			else{
+				//si estan los editext con datos lanza la segunda actividad con los resultados
 				Intent i = new Intent(Principal.this , Resultados.class);
 				i.putExtra("nombre", e1.getText().toString());
 				i.putExtra("telefono", e2.getText().toString());
 				i.putExtra("sexo", rG.getCheckedRadioButtonId());
 				i.putExtra("carnet", sW1.isChecked());
 				i.putExtra("punts", rB.getProgress());
-				Principal.this.startActivityForResult(i,REQUEST_TEXT);
+				Principal.this.startActivity(i);
+				//Codigo utilizado en la version que cierra todo al finalizar en la segunda activity
+				//Principal.this.startActivityForResult(i,REQUEST_TEXT);
 				
 			}
 			break;
@@ -120,6 +128,7 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		// TODO Auto-generated method stub
+		//cambia de mayusculas a minusculas
 		if(checkedId == R.id.radio0){
 			e1.setText(e1.getText().toString().toLowerCase());
 		}
@@ -131,11 +140,11 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		// TODO Auto-generated method stub
+		// Setea el valor del rating o numero de estrellas
 		if(isChecked){
-			rB.setProgress(3);
+			rB.setRating(3.0f);
 		}else{
-			rB.setProgress(0);
+			rB.setRating(0.0f);
 		}
 		
 	}
@@ -146,6 +155,7 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 		e2.setFocusableInTouchMode(true);
 		return true;
 	}
+	//Codigo utilizado en la version que cierra todo al finalizar en la segunda activity
 	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
          if ( requestCode == REQUEST_TEXT ){
