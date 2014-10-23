@@ -1,5 +1,7 @@
 package com.dam.intenciones;
 
+import java.util.Locale;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -132,10 +134,10 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 		// TODO Auto-generated method stub
 		//cambia de mayusculas a minusculas
 		if(checkedId == R.id.radio0){
-			e1.setText(e1.getText().toString().toLowerCase());
+			e1.setText(e1.getText().toString().toLowerCase(Locale.getDefault()));
 		}
 		else{
-			e1.setText(e1.getText().toString().toUpperCase());
+			e1.setText(e1.getText().toString().toUpperCase(Locale.getDefault()));
 		}
 		
 	}

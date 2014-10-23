@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+@SuppressWarnings("unused")
 public class Resultados extends Activity implements OnClickListener {
 	TextView t1, t2, t3, t4;
 	Button b1;
@@ -62,23 +63,21 @@ public class Resultados extends Activity implements OnClickListener {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		if (v.getId() == R.id.button1) {
 			Resultados.this.finish();
 		}
 
 	}
-	//Codigo utilizado en la version que cierra todo al finalizar en la segunda activity
-	/*@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		if (v.getId() == R.id.button1) {
-			Intent i = new Intent(Resultados.this, Principal.class);
-			setResult(Activity.RESULT_OK, i);
-			Resultados.this.finish();
-		}
-
-	}*/
+	// Codigo utilizado en la version que cierra todo al finalizar en la segunda activity
+	/*
+	 * @Override public void onClick(View v) { 
+	 * stub if (v.getId() == R.id.button1) { Intent i = new
+	 * Intent(Resultados.this, Principal.class); setResult(Activity.RESULT_OK,
+	 * i); Resultados.this.finish(); }
+	 * 
+	 * }
+	 */
 }
