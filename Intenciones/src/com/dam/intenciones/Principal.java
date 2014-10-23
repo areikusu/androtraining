@@ -3,9 +3,10 @@ package com.dam.intenciones;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -20,7 +21,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
-public class Principal extends Activity implements OnClickListener, OnCheckedChangeListener, android.widget.CompoundButton.OnCheckedChangeListener, OnEditorActionListener{
+public class Principal extends Activity implements OnClickListener, OnCheckedChangeListener, android.widget.CompoundButton.OnCheckedChangeListener, OnEditorActionListener, TextWatcher{
 	private static final int REQUEST_TEXT = 0;
 	EditText e1, e2;
 	RadioGroup rG;
@@ -45,7 +46,8 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 		rB=(RatingBar)findViewById(R.id.ratingBar1);
 		
 		enDa=(Button)findViewById(R.id.button1);
-		e1.setOnEditorActionListener(this);
+		//e1.setOnEditorActionListener(this);
+		e1.addTextChangedListener(this);
 		e2.setOnClickListener(this);
 		
 		rG.setOnClickListener(this);
@@ -80,15 +82,15 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
-		//codigo usado en la version que comprueba al hacer clich sobre editext 2 comprobando la longitud del texto de editext 1 para recibir foco en caso de ser mayor que 0
-	/*	case R.id.editText2 :
+		//codigo usado en la version que comprueba al hacer click sobre editext 2 comprobando la longitud del texto de editext 1 para recibir foco en caso de ser mayor que 0
+	case R.id.editText2 :
 			if(e1.getText().length()<=0){
 				Toast.makeText(getApplicationContext(),"introduce primero el nombre", Toast.LENGTH_SHORT).show();
 			}
-			else{
-				e2.setFocusableInTouchMode(true);
-			}	
-			break;*/
+			//else{
+			//e2.setFocusableInTouchMode(true);
+			//}	
+			break;
 		case R.id.radioGroup1 :
 			if(e1.getText().length()<=0||e2.getText().length()<=0){
 				//en caso de no estar rellenos los editext no deja continuar
@@ -142,13 +144,13 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 		// Setea el valor del rating o numero de estrellas
 		if(isChecked){
-			rB.setRating(3.0f);
+			rB.setRating(2.5f);
 		}else{
 			rB.setRating(0.0f);
 		}
 		
 	}
-
+	//codigo usado en la version On edit change
 	@Override
 	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 		// TODO Auto-generated method stub
@@ -166,4 +168,31 @@ public class Principal extends Activity implements OnClickListener, OnCheckedCha
 
 
 }
+
+	@Override
+	public void beforeTextChanged(CharSequence s, int start, int count,
+			int after) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTextChanged(CharSequence s, int start, int before, int count) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afterTextChanged(Editable s) {
+		// TODO Auto-generated method stub
+		if (e1.getText().toString().length()<=0) {
+			Toast.makeText(getApplicationContext(),"introduce primero el nombre", Toast.LENGTH_SHORT).show();
+			e2.setFocusable(false);
+			e2.setFocusableInTouchMode(false);
+		}
+		else {
+			e2.setFocusable(true);
+			e2.setFocusableInTouchMode(true);
+		}
+	}
 	}
