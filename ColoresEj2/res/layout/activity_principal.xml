@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="120"
+    tools:context="com.example.coloresej2.Principal" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="40"
+        android:paddingTop="0dp"
+        android:text="Rojo"
+        android:gravity="center"
+        android:background="#f00"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="40"
+        android:orientation="vertical"
+        android:weightSum="50" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="25"
+            android:gravity="center"
+            android:background="#000"
+            android:textColor="#fff"
+            android:text="Negro"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="25"
+            android:gravity="center"
+            android:background="#fff"
+            android:text="Blanco"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="40"
+        android:gravity="center"
+        android:background="#0f0"
+        android:text="Verde"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>
