@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NotificaSiNo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="dias">
+        <item >Lunes</item>
+        <item >Martes</item>
+        <item >Miercoles</item>
+        <item >Jueves</item>
+        <item >Viernes</item>
+        <item >Sabado</item>
+        <item >Domingo</item>  
+    </string-array>
+    <string-array name="Empresas">
+        <item >Telefónica</item>
+        <item >Beep</item>
+        <item >Ford</item>
+        <item >Serrano</item>
+        <item >CSM</item>
+        <item />
+    </string-array>
+    <string-array name="Comidas">
+        <item >Gambas</item>
+        <item >Chopitos</item>
+        <item >Caldereta</item>
+        <item >Papa Vieja</item>
+        <item >Chivito</item>
+        <item >Chorizos</item>
+    </string-array>
+
+</resources>

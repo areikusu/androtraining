@@ -26,7 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="NOMBRE"
+                android:contentDescription="@string/des"
+                android:text="@string/nombre"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -34,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="TextView"
+                android:text="@string/nomdemo"
                 android:textColor="@color/rojo" />
 
             <TextView
@@ -42,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="TLF"
+                android:text="@string/tel"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -50,10 +51,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="TextView"
+                android:text="@string/teldemo"
                 android:textColor="@color/verd"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="CARNET DE CONDUCIR"
+                android:text="@string/carnet"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -75,14 +75,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="TextView" />
+                android:text="@string/buliano" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Puntuacion:"
+                android:text="@string/punts"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="TextView" />
+                android:text="@string/defalto" />
         </LinearLayout>
 
         <LinearLayout
@@ -111,9 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@+string/fin" />
-
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

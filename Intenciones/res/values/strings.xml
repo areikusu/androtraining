@@ -7,6 +7,15 @@
     <string name="title_activity_resultados">Resultados</string>
     <string name="titol">Introduzca primero un nombre.</string>
     <string name="fin">Finalizar</string>
+    <string name="nombre">NOMBRE</string>
+    <string name="carnet">CARNET CONDUCIR</string>
+    <string name="des">Descripción.</string>
+    <string name="nomdemo">Aleix Casanova</string>
+    <string name="tel">TELÉFONO</string>
+    <string name="teldemo">656656656</string>
+    <string name="buliano">SI/NO</string>
+    <string name="punts">PUNTUACIÓN</string>
+    <string name="defalto">0.0~5.0</string>
     
 
 </resources>
