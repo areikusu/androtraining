@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -72,6 +76,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
 			counter++;
 			t.setText(counter + "");
+			v.playSoundEffect(SoundEffectConstants.CLICK);
 
 			if (counter % 3 == 0) {
 				NotificationCompat.Builder mBuild = new NotificationCompat.Builder(
@@ -80,7 +85,12 @@ public class MainActivity extends Activity implements OnClickListener,
 				Intent reseteo = new Intent(this, MainActivity.class);
 				reseteo.putExtra("puntos", counter);
 				PendingIntent pi1 = PendingIntent.getActivity(this, 0, reseteo, PendingIntent.FLAG_UPDATE_CURRENT);
+				Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+				mBuild.setSound(alarmSound);
+				mBuild.setLights(Color.WHITE, 5000, 5000);
+				mBuild.setVibrate(new long[]{500,500,500});
 				mBuild.setContentTitle("3 más.");
+				
 				mBuild.setContentText("Llevas " + counter + " lógicamentes.");
 				mBuild.setSmallIcon(R.drawable.ic_launcher);
 				mBuild.setContentIntent(pi1);
